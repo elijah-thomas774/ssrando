@@ -203,6 +203,10 @@ impl WarpStage {
     fn get_stage_name(&self, idx: u8) -> &'static str {
         self.get_stage_info(idx).name
     }
+
+    fn get_stage_pretty_name(&self, idx: u8) -> &'static str {
+        self.get_stage_info(idx).pretty_name
+    }
 }
 
 pub struct WarpMenu {
@@ -449,10 +453,10 @@ impl WarpMenu {
                     WarpStage::None => {},
                     _ => {
                         let mut sub_menu =
-                            SimpleMenu::<25, 17>::new(200, 5, 10, stage_state.get_name());
+                            SimpleMenu::<25, 39>::new(200, 5, 10, stage_state.get_name());
                         sub_menu.current_line = unsafe { WARP_MENU.stage_cursor as u32 };
                         for n in 0..stage_state.get_num_stages() as u8 {
-                            sub_menu.add_entry(stage_state.get_stage_name(n));
+                            sub_menu.add_entry(stage_state.get_stage_pretty_name(n));
                         }
                         sub_menu.draw();
                     },
