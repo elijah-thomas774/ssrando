@@ -31,10 +31,10 @@ main.dol:
   allow_set_respawn_info: 0x8067A560
   get_glow_color: 0x8067A588
   custom_main_additions: 0x8067A5EC
-  MAIN_MENU: 0x8067DAAC
-  SAMPLE_MENU: 0x8067DAB4
-  FORCE_MOGMA_CAVE_DIVE: 0x8067DAC1
-  WARP_MENU: 0x8067DAC2
+  MAIN_MENU: 0x8067DAB8
+  SAMPLE_MENU: 0x8067DAC0
+  FORCE_MOGMA_CAVE_DIVE: 0x8067DACD
+  WARP_MENU: 0x8067DACE
 d_t_D3_scene_changeNP.rel:
   trigger_exit_one: 0x804
   trigger_exit_one_lbl: 0x340

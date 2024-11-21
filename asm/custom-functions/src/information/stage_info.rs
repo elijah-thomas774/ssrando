@@ -94,8 +94,8 @@ define_stages!(
     // Lanayru
     (F300, "F300 - Lanayru Desert", [0, 1, 2], [0]),
     (F300_1, "F300_1 - Lanayru Mine", [0, 1, 2, 3, 4], [0, 1, 2]),
-    (F300_2, "F300_2 - Fire Node", [0], [0]),
-    (F300_3, "F300_3 - Lightning Node", [0], [0]),
+    (F300_2, "F300_2 - Lightning Node", [0], [0]),
+    (F300_3, "F300_3 - Fire Node", [0], [0]),
     (F300_4, "F300_4 - Temple of Time", [0, 1, 2, 13], [0]),
     (F300_5, "F300_5 - LMF to ToT", [0], [0]),
     (F301, "F301 - Ancient Harbor", [0], [0]),
@@ -193,11 +193,16 @@ define_stages!(
     ),
     (
         D301,
-        "D301 - Sandship (A)",
+        "D301 - Sandship",
         [0, 1, 2, 3, 4, 9, 10, 11, 12],
         [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     ),
-    (D301_1, "D301_1 - Sandship (B)", [0, 2, 3], [0]),
+    (
+        D301_1,
+        "D301_1 - Sandship (Tentalus Escape)",
+        [0, 2, 3],
+        [0]
+    ),
     (B100, "B100 - Ghirahim 1", [0, 1, 2, 3, 4, 5, 13], [0]),
     (B100_1, "B100_1 - Skyview Spring", [0, 1, 2, 3, 4, 13], [0]),
     (B101, "B101 - Koloktos", [0, 1, 2, 3, 6], [0]),
