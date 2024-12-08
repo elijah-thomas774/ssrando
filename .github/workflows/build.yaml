@@ -30,7 +30,7 @@ jobs:
       # - name: Test if the formatting is correct
       #   run: black . --check
       - name: Build distribution
-        run: python3 -mPyInstaller ssrando.spec --log-level=WARN
+        run: poetry run python3 -mPyInstaller ssrando.spec --log-level=WARN
       - name: Run tests
         run: |
           python3 randoscript.py --noui --dry-run --seed=0
