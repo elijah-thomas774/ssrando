@@ -4,30 +4,13 @@ on:
   - push
   - pull_request
 
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [windows-latest, ubuntu-latest, macos-14]
         python-version: ["3.10"]
-        include:
-          - name: Windows Build
-            os: windows-latest
-            architecture: x64
-            artifact: windows
-            artifact_suffix: ""
-          - name: MacOS Build arm64
-            os: macos-14
-            architecture: arm64
-            artifact: macos
-            artifact_suffix: _apple_silicon
-          - name: Linux Build
-            os: ubuntu-latest
-            architecture: x64
-            artifact: linux
-            artifact_suffix: ""
-          
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - name: Set up Python
