@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: poetry install
         env:
-          POETRY_VIRTUALENVS_CREATE: true
+          POETRY_VIRTUALENVS_CREATE: false
       - name: Patch secret key
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
@@ -30,9 +30,7 @@ jobs:
       # - name: Test if the formatting is correct
       #   run: black . --check
       - name: Build distribution
-        run: |
-          pip install pyinstaller
-          python3 -mPyInstaller ssrando.spec --log-level=WARN
+        run: python3 -mPyInstaller ssrando.spec --log-level=WARN
       - name: Run tests
         run: |
           poetry run python3 randoscript.py --noui --dry-run --seed=0
