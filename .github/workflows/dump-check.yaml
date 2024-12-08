@@ -16,7 +16,11 @@ jobs:
       - name: Install dependencies
         run: poetry install
         env:
-          POETRY_VIRTUALENVS_CREATE: false
+          POETRY_VIRTUALENVS_CREATE: true
+      - name: Patch secret key
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: cat ssrando.py.in | envsubst > ssrando.py
       - name: Install system dependencies
         run: sudo apt-get update && sudo apt-get install ffmpeg libsm6 libxext6  -y
       - name: Create dump file
