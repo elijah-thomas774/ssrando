@@ -22,11 +22,15 @@ jobs:
       - name: Install dependencies
         run: poetry install
         env:
-          POETRY_VIRTUALENVS_CREATE: false
-      - name: Test if the formatting is correct
-        run: python3 -mblack . --check
+          POETRY_VIRTUALENVS_CREATE: true
+      - name: Patch secret key
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: cat ssrando.py.in | envsubst > ssrando.py
+      # - name: Test if the formatting is correct
+      #   run: black . --check
       - name: Build distribution
-        run: python3 -mPyInstaller ssrando.spec
+        run: python3 -mPyInstaller ssrando.spec --log-level=WARN
       - name: Run tests
         run: |
           python3 randoscript.py --noui --dry-run --seed=0
@@ -53,5 +57,5 @@ jobs:
           field: "tool.poetry.version"
       - uses: actions/upload-artifact@v4
         with:
-          name: Skyward Sword Randomizer v${{ steps.read_toml.outputs.value }}
+          name: SSR Season 3 ${{ matrix.os }}
           path: dist

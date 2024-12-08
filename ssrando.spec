@@ -1,6 +1,10 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-block_cipher = None
+import secrets
+
+cipher_key = secrets.token_hex(20)
+
+block_cipher = pyi_crypto.PyiBlockCipher(key=cipher_key)
 
 import os
 import re
