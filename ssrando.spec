@@ -1,11 +1,4 @@
 # -*- mode: python ; coding: utf-8 -*-
-
-import secrets
-
-cipher_key = secrets.token_hex(20)
-
-block_cipher = pyi_crypto.PyiBlockCipher(key=cipher_key)
-
 import os
 import re
 import glob
@@ -77,10 +70,8 @@ a = Analysis(['randoscript.py'],
              excludes=[],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
-             cipher=block_cipher,
              noarchive=False)
-pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+pyz = PYZ(a.pure, a.zipped_data)
 exe = EXE(pyz,
           a.scripts,
           a.binaries,
