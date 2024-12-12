@@ -401,7 +401,7 @@ extern "C" fn get_start_info() -> *const StartInfo {
 }
 
 #[no_mangle]
-extern "C" fn send_to_start() {
+pub extern "C" fn send_to_start() {
     let start_info = unsafe { get_start_info().as_ref().unwrap() };
 
     // manage storyflag that indicates day/night

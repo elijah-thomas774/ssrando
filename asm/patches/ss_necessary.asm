@@ -1,4 +1,10 @@
 .open "main.dol"
+.org 0x80062e40
+mr r3, r31 ; tell main to use this
+bl custom_main_additions
+mr r31, r3 ; Force the game to stop
+b 0x80064ca0
+
 ; The subtype of TBox (chests) is determined by the item id
 ; change it, so that it uses 00 00 00 30 of params1 instead
 .org 0x80269530 ; in AcOTBox::init

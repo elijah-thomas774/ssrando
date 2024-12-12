@@ -377,6 +377,7 @@ b checkStoryflagIsSet
 .global game_update_hook
 .global add_ammo_drops
 .global remove_ammo_drops
+.global custom_main_additions
 
 .close
 

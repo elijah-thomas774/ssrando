@@ -99,14 +99,11 @@ class Randomizer(BaseRandomizer):
         self.options.set_option("seed", self.seed)
 
         print(f"Seed: {self.seed}")
-        self.rng = random.Random()
+        self.rng = random.Random(self.seed)
         if self.no_logs:
-            seed = self.seed+(${SECRET_KEY})
-            self.rng.seed(seed)
-            for _ in range(100 + (seed % 256)):
+            for _ in range(100):
                 self.rng.random()
-        else:
-            self.rng.seed(self.seed)
+
         self.rando = Rando(self.areas, self.options, self.rng)
         self.excluded_locations = self.options["excluded-locations"]
         self.dry_run = bool(self.options["dry-run"])
