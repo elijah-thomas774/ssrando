@@ -242,21 +242,8 @@ pub struct CharWriter<const BUFFER_SIZE: usize> {
 
 impl<const BUFFER_SIZE: usize> Write for CharWriter<BUFFER_SIZE> {
     fn write_str(&mut self, s: &str) -> core::fmt::Result {
-        let mut idx = 0;
-        let bytes = s.as_bytes();
-        while idx != s.len() {
-            let c: u8 = bytes[idx];
-            let char_push = if (c > 0x80 && c < 0xA0) || c > 0xDF {
-                let c = ((c as u16) << 8) | bytes[idx + 1] as u16;
-                idx += 2;
-                c
-            } else {
-                idx += 1;
-                c as u16
-            };
-            self.buffer
-                .try_push(char_push)
-                .map_err(|_| core::fmt::Error)?;
+        for c in s.encode_utf16() {
+            self.buffer.try_push(c).map_err(|_| core::fmt::Error)?;
         }
         Ok(())
     }
