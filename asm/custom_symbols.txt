@@ -14,35 +14,39 @@ main.dol:
   is_custom_rando_item: 0x806785A8
   fix_custom_item_get: 0x806785C8
   check_scrapper_repaired: 0x8067867C
-  storyflag_set_to_1: 0x806786EC
-  custom_main_additions: 0x80678CA4
-  process_startflags: 0x8067B1CC
-  handle_bk_map_dungeonflag: 0x8067B400
-  rando_text_command_handler: 0x8067B4AC
-  send_to_start: 0x8067B7DC
-  textbox_a_pressed_or_b_held: 0x8067B864
-  set_goddess_sword_pulled_scene_flag: 0x8067B8A4
-  randomize_boss_key_start_pos: 0x8067B8D0
-  get_item_arc_name: 0x8067B8FC
-  get_item_model_name_ptr: 0x8067B940
-  enforce_loftwing_speed_cap: 0x8067B97C
-  give_item_with_sceneflag: 0x8067BA74
-  get_start_info: 0x8067BB04
-  do_er_fixes: 0x8067BB10
-  allow_set_respawn_info: 0x8067BE24
-  get_glow_color: 0x8067BE4C
-  game_update_hook: 0x8067BEA8
-  has_upgraded_skyward_strike: 0x8067BEB0
-  has_fast_air_meter_drain: 0x8067BEC0
-  has_heart_drops_enabled: 0x8067BED0
-  add_ammo_drops: 0x8067BEE0
-  drop_nothing: 0x8067BFC8
-  get_tablet_keyframe_count: 0x8067C008
-  MAIN_MENU: 0x8067DC78
-  SAMPLE_MENU: 0x8067DC80
-  WARP_MENU: 0x8067DC8C
-  FORCE_MOGMA_CAVE_DIVE: 0x8067DC9D
-  HERO_MODE_OPTIONS: 0x8067DC9E
+  storyflag_set_to_1: 0x8067868C
+  custom_main_additions: 0x80678AC8
+  process_startflags: 0x8067EA54
+  handle_bk_map_dungeonflag: 0x8067EC88
+  rando_text_command_handler: 0x8067ED34
+  send_to_start: 0x8067F064
+  textbox_a_pressed_or_b_held: 0x8067F0EC
+  set_goddess_sword_pulled_scene_flag: 0x8067F12C
+  randomize_boss_key_start_pos: 0x8067F158
+  get_item_arc_name: 0x8067F184
+  get_item_model_name_ptr: 0x8067F1C8
+  enforce_loftwing_speed_cap: 0x8067F204
+  give_item_with_sceneflag: 0x8067F2FC
+  get_start_info: 0x8067F38C
+  do_er_fixes: 0x8067F398
+  allow_set_respawn_info: 0x8067F6AC
+  get_glow_color: 0x8067F6D4
+  game_update_hook: 0x8067F730
+  has_upgraded_skyward_strike: 0x8067F738
+  has_fast_air_meter_drain: 0x8067F748
+  has_heart_drops_enabled: 0x8067F758
+  add_ammo_drops: 0x8067F768
+  drop_nothing: 0x8067F850
+  get_tablet_keyframe_count: 0x8067F890
+  compiler_builtins::int::udiv::__udivdi3: 0x80680E5C
+  compiler_builtins::int::specialized_div_rem::u64_div_rem: 0x80680E7C
+  SAVE_INFO: 0x80682887
+  FORCE_MOGMA_CAVE_DIVE: 0x806828AE
+  HERO_MODE_OPTIONS: 0x806828AF
+  ACTION_MENU: 0x806828B0
+  DISPLAY_MENU: 0x806828B8
+  MAIN_MENU: 0x806828C0
+  WARP_MENU: 0x806828D0
 d_t_D3_scene_changeNP.rel:
   trigger_exit_one: 0x804
   trigger_exit_one_lbl: 0x340
